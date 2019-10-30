@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
 
+import com.hbt.semillero.entidades.TematicaEnum;
+
 /**
  * 
  * <b>Descripción:<b> Clase que determina
@@ -22,7 +24,7 @@ public class ComicDTO implements Serializable {
 	private String id;
 	private String nombre;
 	private String editorial;
-	private String  tematicaEnum;//Modificarrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+	private TematicaEnum  tematicaEnum;
 	private String coleccion;
 	private Integer numeroPaginas;
 	private BigDecimal precio;
@@ -32,17 +34,19 @@ public class ComicDTO implements Serializable {
 	//TODO
 	private String estado;
 	private Long cantidad;
+
+	
 	
 	
 
-	public ComicDTO(String id, String nombre, String editorial, String tematica, String coleccion,
+	public ComicDTO(String id, String nombre, String editorial, TematicaEnum tematicaEnum, String coleccion,
 			Integer numeroPaginas, BigDecimal precio, String autores, Boolean color, LocalDate fechaVenta,
 			String estado, Long cantidad) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.editorial = editorial;
-		this.tematicaEnum = tematica;
+		this.tematicaEnum = tematicaEnum;
 		this.coleccion = coleccion;
 		this.numeroPaginas = numeroPaginas;
 		this.precio = precio;
@@ -54,13 +58,22 @@ public class ComicDTO implements Serializable {
 	}
 	
 	
-	public ComicDTO() {
+	/**
+	 * Constructor de la clase.
+	 * @param id
+	 * @param nombre
+	 */
+	public ComicDTO(String id, String nombre) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.id = id;
+		this.nombre = nombre;
 	}
 
-	
-	
+
+
+
+
+
 	public String getId() {
 		return id;
 	}
@@ -79,11 +92,11 @@ public class ComicDTO implements Serializable {
 	public void setEditorial(String editorial) {
 		this.editorial = editorial;
 	}
-	public String getTematica() {
-		return tematica;
+	public TematicaEnum getTematicaEnum() {
+		return tematicaEnum;
 	}
-	public void setTematica(String tematica) {
-		this.tematica = tematica;
+	public void setTematicaEnum(TematicaEnum tematicaEnum) {
+		this.tematicaEnum = tematicaEnum;
 	}
 	public String getColeccion() {
 		return coleccion;
@@ -150,7 +163,7 @@ public class ComicDTO implements Serializable {
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result + ((numeroPaginas == null) ? 0 : numeroPaginas.hashCode());
 		result = prime * result + ((precio == null) ? 0 : precio.hashCode());
-		result = prime * result + ((tematica == null) ? 0 : tematica.hashCode());
+		result = prime * result + ((tematicaEnum == null) ? 0 : tematicaEnum.hashCode());
 		return result;
 	}
 
@@ -219,10 +232,10 @@ public class ComicDTO implements Serializable {
 				return false;
 		} else if (!precio.equals(other.precio))
 			return false;
-		if (tematica == null) {
-			if (other.tematica != null)
+		if (tematicaEnum == null) {
+			if (other.tematicaEnum != null)
 				return false;
-		} else if (!tematica.equals(other.tematica))
+		} else if (!tematicaEnum.equals(other.tematicaEnum))
 			return false;
 		return true;
 	}

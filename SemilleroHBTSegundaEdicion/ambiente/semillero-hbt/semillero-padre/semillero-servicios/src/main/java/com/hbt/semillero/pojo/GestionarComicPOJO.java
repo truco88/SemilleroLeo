@@ -11,7 +11,8 @@ public class GestionarComicPOJO {
 	
 	public void crearComicDTO() {
 		ComicDTO comicdto = new ComicDTO();
-		//TODO Continuar llenando comicDTO sesion del jueves
+		//TODO 
+		//Continuar llenando comicDTO sesion del jueves
 		
 	}
 	

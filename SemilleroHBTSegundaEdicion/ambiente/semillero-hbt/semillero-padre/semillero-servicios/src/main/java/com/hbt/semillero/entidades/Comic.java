@@ -50,6 +50,7 @@ public class Comic implements Serializable{
 		super();
 	}
 	
+	
 	@Id
 	@Column(name="SCID")
 	@SequenceGenerator(allocationSize = 1, name = "COMIC_SCID_GENERATOR", sequenceName = "SEQ_COMIC")
