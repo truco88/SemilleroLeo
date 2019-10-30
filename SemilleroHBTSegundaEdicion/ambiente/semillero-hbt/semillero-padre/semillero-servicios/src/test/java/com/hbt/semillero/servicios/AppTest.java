@@ -30,12 +30,13 @@ public class AppTest {
 
         }
         return cadenaInvertida;
-        
-        
-        
-        
+     
 	}
-		
 	
+	
+		
+	/**
+	 * Pendiente hacer un metodo que use el método ToString de la entidad COMIC
+	 */
 }
 
