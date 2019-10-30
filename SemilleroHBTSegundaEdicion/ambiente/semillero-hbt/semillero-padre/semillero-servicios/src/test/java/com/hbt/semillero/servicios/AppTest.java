@@ -34,7 +34,6 @@ public class AppTest {
 	}
 	
 	
-		
 	/**
 	 * Pendiente hacer un metodo que use el método ToString de la entidad COMIC
 	 */
