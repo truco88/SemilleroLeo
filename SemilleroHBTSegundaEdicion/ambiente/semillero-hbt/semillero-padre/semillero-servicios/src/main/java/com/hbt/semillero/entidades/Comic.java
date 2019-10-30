@@ -147,8 +147,102 @@ public class Comic implements Serializable{
 				+ autores + ", color=" + color + ", fechaVenta=" + fechaVenta + ", estadoEnum=" + estadoEnum
 				+ ", cantidad=" + cantidad + "]";
 	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((autores == null) ? 0 : autores.hashCode());
+		result = prime * result + ((cantidad == null) ? 0 : cantidad.hashCode());
+		result = prime * result + ((coleccion == null) ? 0 : coleccion.hashCode());
+		result = prime * result + ((color == null) ? 0 : color.hashCode());
+		result = prime * result + ((editorial == null) ? 0 : editorial.hashCode());
+		result = prime * result + ((estadoEnum == null) ? 0 : estadoEnum.hashCode());
+		result = prime * result + ((fechaVenta == null) ? 0 : fechaVenta.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + ((numeroPaginas == null) ? 0 : numeroPaginas.hashCode());
+		result = prime * result + ((precio == null) ? 0 : precio.hashCode());
+		result = prime * result + ((tematicaEnum == null) ? 0 : tematicaEnum.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Comic other = (Comic) obj;
+		if (autores == null) {
+			if (other.autores != null)
+				return false;
+		} else if (!autores.equals(other.autores))
+			return false;
+		if (cantidad == null) {
+			if (other.cantidad != null)
+				return false;
+		} else if (!cantidad.equals(other.cantidad))
+			return false;
+		if (coleccion == null) {
+			if (other.coleccion != null)
+				return false;
+		} else if (!coleccion.equals(other.coleccion))
+			return false;
+		if (color == null) {
+			if (other.color != null)
+				return false;
+		} else if (!color.equals(other.color))
+			return false;
+		if (editorial == null) {
+			if (other.editorial != null)
+				return false;
+		} else if (!editorial.equals(other.editorial))
+			return false;
+		if (estadoEnum == null) {
+			if (other.estadoEnum != null)
+				return false;
+		} else if (!estadoEnum.equals(other.estadoEnum))
+			return false;
+		if (fechaVenta == null) {
+			if (other.fechaVenta != null)
+				return false;
+		} else if (!fechaVenta.equals(other.fechaVenta))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		if (numeroPaginas == null) {
+			if (other.numeroPaginas != null)
+				return false;
+		} else if (!numeroPaginas.equals(other.numeroPaginas))
+			return false;
+		if (precio == null) {
+			if (other.precio != null)
+				return false;
+		} else if (!precio.equals(other.precio))
+			return false;
+		if (tematicaEnum == null) {
+			if (other.tematicaEnum != null)
+				return false;
+		} else if (!tematicaEnum.equals(other.tematicaEnum))
+			return false;
+		return true;
+	}
 	
     
+	
     
 	
 
