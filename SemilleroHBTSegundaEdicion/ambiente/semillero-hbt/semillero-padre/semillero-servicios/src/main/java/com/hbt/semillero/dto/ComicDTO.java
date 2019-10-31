@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.time.LocalDate;
 
+import com.hbt.semillero.entidades.EstadoEnum;
 import com.hbt.semillero.entidades.TematicaEnum;
 
 /**
@@ -32,7 +33,7 @@ public class ComicDTO implements Serializable {
 	private Boolean color;
 	private LocalDate fechaVenta;
 	//TODO
-	private String estado;
+	private EstadoEnum estadoEnum;
 	private Long cantidad;
 
 	
@@ -53,7 +54,7 @@ public class ComicDTO implements Serializable {
 		this.autores = autores;
 		this.color = color;
 		this.fechaVenta = fechaVenta;
-		this.estado = estado;
+		this.estadoEnum = estadoEnum;
 		this.cantidad = cantidad;
 	}
 	
@@ -134,11 +135,11 @@ public class ComicDTO implements Serializable {
 	public void setFechaVenta(LocalDate fechaVenta) {
 		this.fechaVenta = fechaVenta;
 	}
-	public String getEstado() {
-		return estado;
+	public EstadoEnum getEstadoEnum() {
+		return estadoEnum;
 	}
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setEstadoEnum(EstadoEnum estadoEnum) {
+		this.estadoEnum = estadoEnum;
 	}
 	public Long getCantidad() {
 		return cantidad;
@@ -157,7 +158,7 @@ public class ComicDTO implements Serializable {
 		result = prime * result + ((coleccion == null) ? 0 : coleccion.hashCode());
 		result = prime * result + ((color == null) ? 0 : color.hashCode());
 		result = prime * result + ((editorial == null) ? 0 : editorial.hashCode());
-		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
+		result = prime * result + ((estadoEnum == null) ? 0 : estadoEnum.hashCode());
 		result = prime * result + ((fechaVenta == null) ? 0 : fechaVenta.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
@@ -202,10 +203,10 @@ public class ComicDTO implements Serializable {
 				return false;
 		} else if (!editorial.equals(other.editorial))
 			return false;
-		if (estado == null) {
-			if (other.estado != null)
+		if (estadoEnum == null) {
+			if (other.estadoEnum != null)
 				return false;
-		} else if (!estado.equals(other.estado))
+		} else if (!estadoEnum.equals(other.estadoEnum))
 			return false;
 		if (fechaVenta == null) {
 			if (other.fechaVenta != null)

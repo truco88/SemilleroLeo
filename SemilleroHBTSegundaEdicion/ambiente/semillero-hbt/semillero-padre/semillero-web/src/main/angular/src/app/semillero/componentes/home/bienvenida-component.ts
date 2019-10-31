@@ -9,6 +9,15 @@ import { Component, OnInit } from '@angular/core';
   selector: 'bienvenida',
   templateUrl: './bienvenida-component.html',
 })
-export class BienvenidaComponent {
+export class BienvenidaComponent implements OnInit{
+
+  constructor(){
+    console.log("entro en el conastructor del componente Bienvenida");
+    
+  }
+
+  ngOnInit(): void {
+    console.log("entro en el evento Oninit del componente Bienvenida");
+  }
 
 }
