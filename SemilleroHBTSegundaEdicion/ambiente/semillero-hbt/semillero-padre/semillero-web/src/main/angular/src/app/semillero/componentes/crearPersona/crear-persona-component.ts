@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 
+
 @Component({
     selector: 'crear-persona',
-    templateUrl: './crear-persona.html',
-    styleUrls: ['./crear-persona.css']
+    templateUrl: './crear-persona-component.html',
+    styleUrls: ['./crear-persona-component.css']
 })
 export class CrearPersonaComponent {
   
