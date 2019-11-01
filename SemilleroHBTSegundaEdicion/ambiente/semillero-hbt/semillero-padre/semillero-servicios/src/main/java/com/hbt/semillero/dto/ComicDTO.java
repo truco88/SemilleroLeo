@@ -32,7 +32,6 @@ public class ComicDTO implements Serializable {
 	private String autores;
 	private Boolean color;
 	private LocalDate fechaVenta;
-	//TODO
 	private EstadoEnum estadoEnum;
 	private Long cantidad;
 
@@ -70,9 +69,9 @@ public class ComicDTO implements Serializable {
 		this.nombre = nombre;
 	}
 
-
-
-
+	public ComicDTO() {
+		// TODO Auto-generated constructor stub
+	}
 
 
 	public String getId() {

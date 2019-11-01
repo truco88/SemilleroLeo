@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
     styleUrls: ['./crear-persona-component.css']
 })
 export class CrearPersonaComponent {
-  
+
+    
 }
