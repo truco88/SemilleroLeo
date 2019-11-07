@@ -30,7 +30,7 @@ public class ComicDTO implements Serializable {
 	private Integer numeroPaginas;
 	private BigDecimal precio;
 	private String autores;
-	private Boolean color;
+	private boolean color;
 	private LocalDate fechaVenta;
 	private EstadoEnum estadoEnum;
 	private Long cantidad;
@@ -40,8 +40,8 @@ public class ComicDTO implements Serializable {
 	
 
 	public ComicDTO(String id, String nombre, String editorial, TematicaEnum tematicaEnum, String coleccion,
-			Integer numeroPaginas, BigDecimal precio, String autores, Boolean color, LocalDate fechaVenta,
-			String estado, Long cantidad) {
+			Integer numeroPaginas, BigDecimal precio, String autores, boolean color, LocalDate fechaVenta,
+			EstadoEnum estado, Long cantidad) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -62,6 +62,17 @@ public class ComicDTO implements Serializable {
 	 * Constructor de la clase.
 	 * @param id
 	 * @param nombre
+	 * @param editorial
+	 * @param tematica
+	 * @param coleccion 
+	 * @param nombrePaginas
+	 * @param precio
+	 * @param color
+	 * @param autores
+	 * @param fechaVenta
+	 * @param estado
+	 * @param cantidad
+	 * 
 	 */
 	public ComicDTO(String id, String nombre) {
 		super();
@@ -122,10 +133,10 @@ public class ComicDTO implements Serializable {
 	public void setAutores(String autores) {
 		this.autores = autores;
 	}
-	public Boolean getColor() {
+	public boolean getColor() {
 		return color;
 	}
-	public void setColor(Boolean color) {
+	public void setColor(boolean color) {
 		this.color = color;
 	}
 	public LocalDate getFechaVenta() {
@@ -148,6 +159,9 @@ public class ComicDTO implements Serializable {
 	}
 
 
+	/** 
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -155,7 +169,7 @@ public class ComicDTO implements Serializable {
 		result = prime * result + ((autores == null) ? 0 : autores.hashCode());
 		result = prime * result + ((cantidad == null) ? 0 : cantidad.hashCode());
 		result = prime * result + ((coleccion == null) ? 0 : coleccion.hashCode());
-		result = prime * result + ((color == null) ? 0 : color.hashCode());
+		result = prime * result + (color ? 1231 : 1237);
 		result = prime * result + ((editorial == null) ? 0 : editorial.hashCode());
 		result = prime * result + ((estadoEnum == null) ? 0 : estadoEnum.hashCode());
 		result = prime * result + ((fechaVenta == null) ? 0 : fechaVenta.hashCode());
@@ -168,6 +182,9 @@ public class ComicDTO implements Serializable {
 	}
 
 
+	/** 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -192,20 +209,14 @@ public class ComicDTO implements Serializable {
 				return false;
 		} else if (!coleccion.equals(other.coleccion))
 			return false;
-		if (color == null) {
-			if (other.color != null)
-				return false;
-		} else if (!color.equals(other.color))
+		if (color != other.color)
 			return false;
 		if (editorial == null) {
 			if (other.editorial != null)
 				return false;
 		} else if (!editorial.equals(other.editorial))
 			return false;
-		if (estadoEnum == null) {
-			if (other.estadoEnum != null)
-				return false;
-		} else if (!estadoEnum.equals(other.estadoEnum))
+		if (estadoEnum != other.estadoEnum)
 			return false;
 		if (fechaVenta == null) {
 			if (other.fechaVenta != null)
@@ -232,13 +243,12 @@ public class ComicDTO implements Serializable {
 				return false;
 		} else if (!precio.equals(other.precio))
 			return false;
-		if (tematicaEnum == null) {
-			if (other.tematicaEnum != null)
-				return false;
-		} else if (!tematicaEnum.equals(other.tematicaEnum))
+		if (tematicaEnum != other.tematicaEnum)
 			return false;
 		return true;
 	}
+
+
 	
 	
 	
