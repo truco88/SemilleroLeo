@@ -57,7 +57,7 @@ public class GestionarComicBean implements IGestionarComicLocal{
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public ComicDTO consultarComic(String id) {
 		
-		Comic comic = em.find(Comic.class, id);
+		Comic comic = em.find(Comic.class, Long.parseLong(id));
 		ComicDTO comicDTO = convertirComicToComicDTO(comic);
 		return comicDTO;
 	}
@@ -138,6 +138,7 @@ public class GestionarComicBean implements IGestionarComicLocal{
         comic.setFechaVenta(comicDTO.getFechaVenta());
         comic.setEstadoEnum(comicDTO.getEstadoEnum());
         comic.setCantidad(comicDTO.getCantidad());
+        
         return comic;
 		
 	}
