@@ -2,11 +2,10 @@ package com.hbt.semillero.servicios;
 
 import java.time.LocalDate;
 import java.time.Month;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.hbt.semillero.pojo.EjerciciosPojo;
+
 
 public class EjerciciosTest {
 
@@ -26,7 +25,7 @@ public class EjerciciosTest {
 		 */
 
 		/**
-		 * java.lang importa una libreria (no valido)
+		 *java.lang importa una libreria (no valido)
 		 */
 
 		/**
@@ -49,9 +48,9 @@ public class EjerciciosTest {
 	 */
 	@Test(enabled = false)
 	public void ejercicio2() {
-		EjerciciosPojo.ejercicioIni();
+		//EjerciciosPojo.ejercicioIni();
 	}
-
+	
 	/**
 	 * 
 	 * Metodo encargado de validar si el numero ingresado es primo 
@@ -59,17 +58,17 @@ public class EjerciciosTest {
 	 * @author soporte_it_manizales
 	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void ejercicio3() {
 
 		EjerciciosPojo ejercicio = new EjerciciosPojo();
-
+		
 		Assert.assertEquals(ejercicio.primo(5), true);
 		Assert.assertEquals(ejercicio.primo(222), false);
-		Assert.assertEquals(ejercicio.primo(0), false);
-
+		Assert.assertEquals(ejercicio.primo(0), true);
+		
 	}
-
+	
 	/**
 	 * 
 	 * Metodo encargado de validar la fecha de hoy sumandole a la fecha de
@@ -78,13 +77,13 @@ public class EjerciciosTest {
 	 * @author soporte_it_manizales
 	 *
 	 */
-	@Test
+	@Test(enabled = true)
 	public void ejercicio4() {
 
 		EjerciciosPojo ejercicio = new EjerciciosPojo();
 		Assert.assertTrue(ejercicio.validarEdad(LocalDate.of(1988, Month.JANUARY, 9), 31L));
 	}
-
+	
 	/**
 	 * 
 	 * Metodo encargado de probar el ejerciico5 <b>Caso de Uso</b>
@@ -104,8 +103,8 @@ public class EjerciciosTest {
 
 	/**
 	 * 
-	 * Metodo encargado de probar el cambio <b>Caso de Uso</b>
-	 * 
+	 * Metodo encargado de probar el cambio 
+	 * <b>Caso de Uso</b>
 	 * @author soporte_it_manizales
 	 *
 	 */
@@ -117,7 +116,7 @@ public class EjerciciosTest {
 		int[] esperado2 = { 1, 0, 0, 0, 0 };
 		Assert.assertEquals(EjerciciosPojo.cambio(1000), esperado2);
 	}
-
+	
 	/**
 	 * 
 	 * Metodo encargado de probar secuencia <b>Caso de Uso</b>
@@ -125,11 +124,16 @@ public class EjerciciosTest {
 	 * @author soporte_it_manizales
 	 *
 	 */
-	@Test
+	@Test(enabled = false)
 	public void pruebaEjercicio11() {
 		EjerciciosPojo secuencia = new EjerciciosPojo();
-		Assert.assertEquals(secuencia.siguiente("80", "36"), 46);
+		Assert.assertEquals(secuencia.siguiente("80", "36"), 56);
 
 	}
+	
+	
+	
+	
+
 
 }

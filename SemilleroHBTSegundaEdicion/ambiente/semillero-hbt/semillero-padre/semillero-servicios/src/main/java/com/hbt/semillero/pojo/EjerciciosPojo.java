@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.hibernate.engine.loading.internal.LoadContexts;
+import org.hibernate.type.LocalDateType;
+
 public class EjerciciosPojo {
 
 	LinkedList<Integer> list = new LinkedList<Integer>();
@@ -13,8 +16,8 @@ public class EjerciciosPojo {
 	 * Ejercicio 2 - Resultado del siguiente programa variable static puede usar
 	 * metodos sin crear instancia de ellos
 	 */
-	private static String brand;
-	private static boolean empty;
+	private static String brand; //inicializa en null
+	private static boolean empty; //simepre inicializa en false
 
 	public static void ejercicioIni() {
 
@@ -31,7 +34,7 @@ public class EjerciciosPojo {
 	 */
 	public boolean primo(int n) {
 		for (int i = 2; i < n; i++) {
-			if (n % 0 == 0)
+			if (n % i == 0)
 				return false;
 
 		}
@@ -50,10 +53,11 @@ public class EjerciciosPojo {
 	 * @return
 	 */
 	public boolean validarEdad(LocalDate fecha, Long edad) {
+	
 		LocalDate calcular = fecha.plusYears(edad);
 		LocalDate fechaActual = LocalDate.now();
 		if (calcular.equals(fechaActual)) {
-			return true;
+			//return true;
 		}
 		return false;
 
@@ -123,8 +127,8 @@ public class EjerciciosPojo {
 
 	/**
 	 * 
-	 * Ejercicio 9 <b>Caso de Uso</b>
-	 * 
+	 * Ejercicio 9 
+	 * <b>Caso de Uso</b>
 	 * @author soporte_it_manizales
 	 * 
 	 * @throws Exception
@@ -137,10 +141,10 @@ public class EjerciciosPojo {
 
 	/**
 	 * 
-	 * Metodo encargado de entregar el sig num <b>Caso de Uso</b>
+	 * Metodo encargado de entregar el sig num <
 	 * 
 	 * @author soporte_it_manizales
-	 * 
+	 * b>Caso de Uso</b>
 	 * @param num1
 	 * @param num2
 	 * @return
@@ -162,7 +166,7 @@ public class EjerciciosPojo {
 
 	/**
 	 * 
-	 * Metodo encargado de retornar el siguiente numero <b>Caso de Uso</b>
+	 * Metodo encargado de retornar el siguiente numero 
 	 * 
 	 * @author soporte_it_manizales
 	 * 
@@ -183,4 +187,8 @@ public class EjerciciosPojo {
 		}
 		return "" + num1 + num2;
 	}
+	
+	
+	
+	
 }
