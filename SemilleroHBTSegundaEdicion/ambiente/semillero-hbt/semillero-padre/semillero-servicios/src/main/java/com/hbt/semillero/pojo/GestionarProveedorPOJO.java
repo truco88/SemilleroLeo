@@ -25,22 +25,23 @@ public class GestionarProveedorPOJO {
 	 */
 	private List<ProveedorDTO> listaProveedores = null;
 
-	public void crearProveedorDTO() {
+	/**
+	 * 
+	 * Metodo encargado de crear un nuevo proveedor
+	 * 
+	 * @author leo
+	 *
+	 */
+	public void crearProveedorDTO(String id, String direccion, LocalDate fechaCreacion, String estado, Persona persona, BigDecimal credito) {
 
-		/**
-		 * 
-		 * Metodo encargado de crear un nuevo proveedor
-		 * 
-		 * @author leo
-		 *
-		 */
+		
 		ProveedorDTO proveedorDTO = new ProveedorDTO();
-		proveedorDTO.setId("10");
-		proveedorDTO.setDireccion("Cll 52 n° 39-34");
-		proveedorDTO.setFechaCreacion(LocalDate.now());
-		proveedorDTO.setEstado("ACTIVO");
-		//proveedorDTO.setPersona(persona);
-		proveedorDTO.setMontoCredito(new BigDecimal(5000));
+		proveedorDTO.setId(id);
+		proveedorDTO.setDireccion(direccion);
+		proveedorDTO.setFechaCreacion(fechaCreacion);
+		proveedorDTO.setEstado(estado);
+		proveedorDTO.setPersona(persona);
+		proveedorDTO.setMontoCredito(credito);
 
 		if (listaProveedores == null) {
 			listaProveedores = new ArrayList<ProveedorDTO>();
@@ -52,7 +53,7 @@ public class GestionarProveedorPOJO {
 	
 	/**
 	 * 
-	 * Metodo encargado de retornar un proveeedor dado un id determinadao
+	 * Metodo encargado de retornar un proveeedor dado un id
 	 * 
 	 * @param idProveedor identificador del proveedor a ser buscado
 	 * @
