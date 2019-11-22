@@ -4,8 +4,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.hbt.semillero.dto.ComicDTO;
 import com.hbt.semillero.dto.ProveedorDTO;
 import com.hbt.semillero.entidades.Persona;
 
