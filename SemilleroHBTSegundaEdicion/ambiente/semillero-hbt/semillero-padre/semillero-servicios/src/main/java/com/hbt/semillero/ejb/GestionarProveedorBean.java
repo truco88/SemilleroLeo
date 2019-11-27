@@ -34,9 +34,6 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 	
 	
 	
-	
-	
-	
 
 	/**
 	 * Metodo encargado para transpasar informacion de un lado a otro, no incluye

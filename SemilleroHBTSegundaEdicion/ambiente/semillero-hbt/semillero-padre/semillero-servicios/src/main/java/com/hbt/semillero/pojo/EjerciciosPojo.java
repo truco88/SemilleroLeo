@@ -16,8 +16,8 @@ public class EjerciciosPojo {
 	 * Ejercicio 2 - Resultado del siguiente programa variable static puede usar
 	 * metodos sin crear instancia de ellos
 	 */
-	private static String brand; //inicializa en null
-	private static boolean empty; //simepre inicializa en false
+	private static String brand; // inicializa en null
+	private static boolean empty; // simepre inicializa en false
 
 	public static void ejercicioIni() {
 
@@ -53,11 +53,11 @@ public class EjerciciosPojo {
 	 * @return
 	 */
 	public boolean validarEdad(LocalDate fecha, Long edad) {
-	
+
 		LocalDate calcular = fecha.plusYears(edad);
 		LocalDate fechaActual = LocalDate.now();
 		if (calcular.equals(fechaActual)) {
-			//return true;
+			// return true;
 		}
 		return false;
 
@@ -127,15 +127,16 @@ public class EjerciciosPojo {
 
 	/**
 	 * 
-	 * Ejercicio 9 
-	 * <b>Caso de Uso</b>
+	 * Ejercicio 9 <b>Caso de Uso</b>
+	 * 
 	 * @author soporte_it_manizales
 	 * 
 	 * @throws Exception
 	 */
-	//throws se utiliza para identidficar la lista posible de excepciones que un metodo puede lanzar
+	// throws se utiliza para identidficar la lista posible de excepciones que un
+	// metodo puede lanzar
 	public void ejercicio9() throws Exception {
-		//throw se utiliza para lanzar explicitamente una axcepcion 
+		// throw se utiliza para lanzar explicitamente una axcepcion
 		throw new Exception();
 	}
 
@@ -143,8 +144,7 @@ public class EjerciciosPojo {
 	 * 
 	 * Metodo encargado de entregar el sig num <
 	 * 
-	 * @author soporte_it_manizales
-	 * b>Caso de Uso</b>
+	 * @author soporte_it_manizales b>Caso de Uso</b>
 	 * @param num1
 	 * @param num2
 	 * @return
@@ -166,7 +166,7 @@ public class EjerciciosPojo {
 
 	/**
 	 * 
-	 * Metodo encargado de retornar el siguiente numero 
+	 * Metodo encargado de retornar el siguiente numero
 	 * 
 	 * @author soporte_it_manizales
 	 * 
@@ -187,8 +187,5 @@ public class EjerciciosPojo {
 		}
 		return "" + num1 + num2;
 	}
-	
-	
-	
-	
+
 }

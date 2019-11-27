@@ -10,22 +10,22 @@ import com.hbt.semillero.entidades.TematicaEnum;
 
 /**
  * 
- * <b>Descripción:<b> Clase que determina
- * <b>Caso de Uso:<b> 
+ * <b>Descripción:<b> Clase que determina <b>Caso de Uso:<b>
+ * 
  * @author Leo
  * @version
  */
 public class ComicDTO implements Serializable {
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 3399451499483295220L;
-	
+
 	private String id;
 	private String nombre;
 	private String editorial;
-	private TematicaEnum  tematicaEnum;
+	private TematicaEnum tematicaEnum;
 	private String coleccion;
 	private Integer numeroPaginas;
 	private BigDecimal precio;
@@ -34,10 +34,6 @@ public class ComicDTO implements Serializable {
 	private LocalDate fechaVenta;
 	private EstadoEnum estadoEnum;
 	private Long cantidad;
-
-	
-	
-	
 
 	public ComicDTO(String id, String nombre, String editorial, TematicaEnum tematicaEnum, String coleccion,
 			Integer numeroPaginas, BigDecimal precio, String autores, boolean color, LocalDate fechaVenta,
@@ -56,15 +52,15 @@ public class ComicDTO implements Serializable {
 		this.estadoEnum = estadoEnum;
 		this.cantidad = cantidad;
 	}
-	
-	
+
 	/**
 	 * Constructor de la clase.
+	 * 
 	 * @param id
 	 * @param nombre
 	 * @param editorial
 	 * @param tematica
-	 * @param coleccion 
+	 * @param coleccion
 	 * @param nombrePaginas
 	 * @param precio
 	 * @param color
@@ -84,82 +80,103 @@ public class ComicDTO implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getEditorial() {
 		return editorial;
 	}
+
 	public void setEditorial(String editorial) {
 		this.editorial = editorial;
 	}
+
 	public TematicaEnum getTematicaEnum() {
 		return tematicaEnum;
 	}
+
 	public void setTematicaEnum(TematicaEnum tematicaEnum) {
 		this.tematicaEnum = tematicaEnum;
 	}
+
 	public String getColeccion() {
 		return coleccion;
 	}
+
 	public void setColeccion(String coleccion) {
 		this.coleccion = coleccion;
 	}
+
 	public Integer getNumeroPaginas() {
 		return numeroPaginas;
 	}
+
 	public void setNumeroPaginas(Integer numeroPaginas) {
 		this.numeroPaginas = numeroPaginas;
 	}
+
 	public BigDecimal getPrecio() {
 		return precio;
 	}
+
 	public void setPrecio(BigDecimal precio) {
 		this.precio = precio;
 	}
+
 	public String getAutores() {
 		return autores;
 	}
+
 	public void setAutores(String autores) {
 		this.autores = autores;
 	}
+
 	public boolean getColor() {
 		return color;
 	}
+
 	public void setColor(boolean color) {
 		this.color = color;
 	}
+
 	public LocalDate getFechaVenta() {
 		return fechaVenta;
 	}
+
 	public void setFechaVenta(LocalDate fechaVenta) {
 		this.fechaVenta = fechaVenta;
 	}
+
 	public EstadoEnum getEstadoEnum() {
 		return estadoEnum;
 	}
+
 	public void setEstadoEnum(EstadoEnum estadoEnum) {
 		this.estadoEnum = estadoEnum;
 	}
+
 	public Long getCantidad() {
 		return cantidad;
 	}
+
 	public void setCantidad(Long cantidad) {
 		this.cantidad = cantidad;
 	}
 
-
-	/** 
+	/**
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -181,8 +198,7 @@ public class ComicDTO implements Serializable {
 		return result;
 	}
 
-
-	/** 
+	/**
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -247,10 +263,5 @@ public class ComicDTO implements Serializable {
 			return false;
 		return true;
 	}
-
-
-	
-	
-	
 
 }

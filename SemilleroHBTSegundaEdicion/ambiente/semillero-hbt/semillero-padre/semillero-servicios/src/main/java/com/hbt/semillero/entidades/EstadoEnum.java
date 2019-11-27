@@ -5,8 +5,8 @@ package com.hbt.semillero.entidades;
 
 /**
  * 
- * <b>Descripción:<b> Clase que determina
- * <b>Caso de Uso:<b> 
+ * <b>Descripción:<b> Clase que determina <b>Caso de Uso:<b>
+ * 
  * @author Leo
  * @version
  */
@@ -19,6 +19,7 @@ public enum EstadoEnum {
 
 	/**
 	 * Constructor de la clase.
+	 * 
 	 * @param codigoMensaje
 	 */
 	private EstadoEnum(String codigoMensaje) {
@@ -27,6 +28,7 @@ public enum EstadoEnum {
 
 	/**
 	 * Metodo encargado de retornar el valor del atributo codigoMensaje
+	 * 
 	 * @return El codigoMensaje asociado a la clase
 	 */
 	public String getCodigoMensaje() {
@@ -35,11 +37,11 @@ public enum EstadoEnum {
 
 	/**
 	 * Metodo encargado de modificar el valor del atributo codigoMensaje
+	 * 
 	 * @param codigoMensaje El nuevo codigoMensaje a modificar.
 	 */
 	public void setCodigoMensaje(String codigoMensaje) {
 		this.codigoMensaje = codigoMensaje;
 	}
 
-	
 }

@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import com.hbt.semillero.dto.ProveedorDTO;
+import com.hbt.semillero.entidades.EstadoEnum;
 import com.hbt.semillero.entidades.Persona;
 
 /**
@@ -17,7 +18,7 @@ import com.hbt.semillero.entidades.Persona;
  * @version 1.0
  */
 public class GestionarProveedorPOJO {
-	
+
 	/**
 	 * Lista que permite reunir un conjunto de proveedoress
 	 */
@@ -30,35 +31,33 @@ public class GestionarProveedorPOJO {
 	 * @author leo
 	 *
 	 */
-	public void crearProveedorDTO(String id, String direccion, LocalDate fechaCreacion, String estado, Persona persona, BigDecimal credito) {
+	public void crearProveedorDTO(String id, String direccion, LocalDate fechaCreacion, String estado, Persona persona,
+			BigDecimal credito) {
 
-		
 		ProveedorDTO proveedorDTO = new ProveedorDTO();
 		proveedorDTO.setId(id);
 		proveedorDTO.setDireccion(direccion);
 		proveedorDTO.setFechaCreacion(fechaCreacion);
-		proveedorDTO.setEstado(estado);
+		proveedorDTO.setEstado(EstadoEnum.ACTIVO);
 		proveedorDTO.setPersona(persona);
 		proveedorDTO.setMontoCredito(credito);
 
 		if (listaProveedores == null) {
 			listaProveedores = new ArrayList<ProveedorDTO>();
 		}
-		
+
 		listaProveedores.add(proveedorDTO);
 	}
 
-	
 	/**
 	 * 
 	 * Metodo encargado de retornar un proveeedor dado un id
 	 * 
-	 * @param idProveedor identificador del proveedor a ser buscado
-	 * @
+	 * @param idProveedor identificador del proveedor a ser buscado @
 	 */
 	public ProveedorDTO consultarProveedorDTO(String idProveedor) {
-		
-		if(listaProveedores != null && !listaProveedores.isEmpty()) {
+
+		if (listaProveedores != null && !listaProveedores.isEmpty()) {
 			for (int i = 0; i < listaProveedores.size(); i++) {
 				if (listaProveedores.get(i).getId().equals(idProveedor)) {
 					return listaProveedores.get(i);
@@ -67,8 +66,5 @@ public class GestionarProveedorPOJO {
 		}
 		return null;
 	}
-	
-	
-	
 
 }

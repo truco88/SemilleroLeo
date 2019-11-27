@@ -8,7 +8,6 @@ import com.hbt.semillero.dto.ComicDTO;
 import com.hbt.semillero.entidades.EstadoEnum;
 import com.hbt.semillero.entidades.TematicaEnum;
 
-
 /**
  * <b>Descripción:<b> Clase que determina el uso de metodos para manipular
  * informacion POJO «Plain Old Java Object», que puede interpretarse como «Un
