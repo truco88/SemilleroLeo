@@ -12,7 +12,7 @@ import com.hbt.semillero.dto.ComicDTO;
  * necesita implementar pero no el como eso lo realiza la clase que la
  * implementa Palabras claves interface e implements
  * 
- * @author ccastano
+ * @author Leo
  *
  */
 @Local
@@ -32,7 +32,7 @@ public interface IGestionarComicLocal {
 	 * 
 	 * Metodo encargado de consultar un comic modificarlo y guardarlo
 	 * 
-	 * @author ccastano
+	 * @author Leo
 	 * 
 	 * @param comicModificar informacion nueva a modificar
 	 */
@@ -42,7 +42,7 @@ public interface IGestionarComicLocal {
 	 * 
 	 * Metodo encargado de eliminar un comic modificarlo y guardarlo
 	 * 
-	 * @author ccastano
+	 * @author Leo
 	 * 
 	 * @param comicEliminar informacion a eliminar
 	 */

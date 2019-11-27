@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.hbt.semillero.entidades.EstadoEnum;
 import com.hbt.semillero.entidades.Persona;
 
 /**
@@ -18,7 +19,7 @@ public class ProveedorDTO implements Serializable {
 	private String id;
 	private String direccion;
 	private LocalDate fechaCreacion;
-	private String estado;
+	private EstadoEnum estadoEnum;
 	private Persona persona;
 	private BigDecimal montoCredito;
 
@@ -39,13 +40,13 @@ public class ProveedorDTO implements Serializable {
 	 * @param persona
 	 * @param montoCredito
 	 */
-	public ProveedorDTO(String id, String direccion, LocalDate fechaCreacion, String estado, Persona persona,
+	public ProveedorDTO(String id, String direccion, LocalDate fechaCreacion, EstadoEnum estadoEnum, Persona persona,
 			BigDecimal montoCredito) {
 		super();
 		this.id = id;
 		this.direccion = direccion;
 		this.fechaCreacion = fechaCreacion;
-		this.estado = estado;
+		this.estadoEnum = estadoEnum;
 		this.persona = persona;
 		this.montoCredito = montoCredito;
 	}
@@ -109,8 +110,8 @@ public class ProveedorDTO implements Serializable {
 	 * 
 	 * @return El estado asociado a la clase
 	 */
-	public String getEstado() {
-		return estado;
+	public EstadoEnum getEstado() {
+		return estadoEnum;
 	}
 
 	/**
@@ -118,8 +119,8 @@ public class ProveedorDTO implements Serializable {
 	 * 
 	 * @param estado El nuevo estado a modificar.
 	 */
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setEstado(EstadoEnum estadoEnum) {
+		this.estadoEnum = estadoEnum;
 	}
 
 	/**
@@ -170,7 +171,7 @@ public class ProveedorDTO implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((direccion == null) ? 0 : direccion.hashCode());
-		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
+		result = prime * result + ((estadoEnum == null) ? 0 : estadoEnum.hashCode());
 		result = prime * result + ((fechaCreacion == null) ? 0 : fechaCreacion.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((montoCredito == null) ? 0 : montoCredito.hashCode());
@@ -195,10 +196,10 @@ public class ProveedorDTO implements Serializable {
 				return false;
 		} else if (!direccion.equals(other.direccion))
 			return false;
-		if (estado == null) {
-			if (other.estado != null)
+		if (estadoEnum == null) {
+			if (other.estadoEnum != null)
 				return false;
-		} else if (!estado.equals(other.estado))
+		} else if (!estadoEnum.equals(other.estadoEnum))
 			return false;
 		if (fechaCreacion == null) {
 			if (other.fechaCreacion != null)

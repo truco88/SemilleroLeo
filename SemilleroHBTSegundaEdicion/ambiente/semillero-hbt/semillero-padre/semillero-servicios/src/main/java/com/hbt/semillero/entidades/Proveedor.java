@@ -4,6 +4,14 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 /**
  * 
  * <b>Descripción:<b> Clase Proveedor <b>Caso de Uso:<b>
@@ -11,6 +19,9 @@ import java.time.LocalDate;
  * @author soporte_it_manizales
  * @version
  */
+
+@Entity
+@Table(name = "TC_PROVEEDOR")
 public class Proveedor implements Serializable {
 
 	/**
@@ -23,7 +34,7 @@ public class Proveedor implements Serializable {
 	private String id;
 	private String direccion;
 	private LocalDate fechaCreacion;
-	private String estado;
+	private EstadoEnum estadoEnum;
 	private Persona persona;
 	private BigDecimal montoCredito;
 
@@ -44,13 +55,13 @@ public class Proveedor implements Serializable {
 	 * @param persona
 	 * @param montoCredito
 	 */
-	public Proveedor(String id, String direccion, LocalDate fechaCreacion, String estado, Persona persona,
+	public Proveedor(String id, String direccion, LocalDate fechaCreacion, EstadoEnum estadoEnum, Persona persona,
 			BigDecimal montoCredito) {
 		super();
 		this.id = id;
 		this.direccion = direccion;
 		this.fechaCreacion = fechaCreacion;
-		this.estado = estado;
+		this.estadoEnum = estadoEnum;
 		this.persona = persona;
 		this.montoCredito = montoCredito;
 	}
@@ -60,6 +71,11 @@ public class Proveedor implements Serializable {
 	 * 
 	 * @return El id asociado a la clase
 	 */
+
+	@Id
+	@SequenceGenerator(allocationSize = 1, name = "TC_PROVEEDOR_SPID_GENERATOR", sequenceName = "SEQ_TC_PROVEEDOR")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TC_PROVEEDOR_SPID_GENERATOR")
+	@Column(name = "SPID")
 	public String getId() {
 		return id;
 	}
@@ -78,6 +94,8 @@ public class Proveedor implements Serializable {
 	 * 
 	 * @return El direccion asociado a la clase
 	 */
+
+	@Column(name = "SPDIRECCION")
 	public String getDireccion() {
 		return direccion;
 	}
@@ -96,6 +114,7 @@ public class Proveedor implements Serializable {
 	 * 
 	 * @return El fechaCreacion asociado a la clase
 	 */
+	@Column(name = "SPFECHA_CREACION")
 	public LocalDate getFechaCreacion() {
 		return fechaCreacion;
 	}
@@ -114,8 +133,9 @@ public class Proveedor implements Serializable {
 	 * 
 	 * @return El estado asociado a la clase
 	 */
-	public String getEstado() {
-		return estado;
+	@Column(name = "SPESTADO")
+	public EstadoEnum getEstado() {
+		return estadoEnum;
 	}
 
 	/**
@@ -123,8 +143,8 @@ public class Proveedor implements Serializable {
 	 * 
 	 * @param estado El nuevo estado a modificar.
 	 */
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setEstado(EstadoEnum estadoEnum) {
+		this.estadoEnum = estadoEnum;
 	}
 
 	/**
@@ -132,6 +152,7 @@ public class Proveedor implements Serializable {
 	 * 
 	 * @return El persona asociado a la clase
 	 */
+	@Column(name = "SPIDPERSONA")
 	public Persona getPersona() {
 		return persona;
 	}
@@ -150,6 +171,7 @@ public class Proveedor implements Serializable {
 	 * 
 	 * @return El montoCredito asociado a la clase
 	 */
+	@Column(name = "SPMONTO")
 	public BigDecimal getMontoCredito() {
 		return montoCredito;
 	}
@@ -170,7 +192,7 @@ public class Proveedor implements Serializable {
 	@Override
 	public String toString() {
 		return "Proveedor [id=" + id + ", direccion=" + direccion + ", fechaCreacion=" + fechaCreacion + ", estado="
-				+ estado + ", persona=" + persona + ", montoCredito=" + montoCredito + "]";
+				+ estadoEnum + ", persona=" + persona + ", montoCredito=" + montoCredito + "]";
 	}
 
 	/**
@@ -185,7 +207,7 @@ public class Proveedor implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((direccion == null) ? 0 : direccion.hashCode());
-		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
+		result = prime * result + ((estadoEnum == null) ? 0 : estadoEnum.hashCode());
 		result = prime * result + ((fechaCreacion == null) ? 0 : fechaCreacion.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((montoCredito == null) ? 0 : montoCredito.hashCode());
@@ -210,10 +232,10 @@ public class Proveedor implements Serializable {
 				return false;
 		} else if (!direccion.equals(other.direccion))
 			return false;
-		if (estado == null) {
-			if (other.estado != null)
+		if (estadoEnum == null) {
+			if (other.estadoEnum != null)
 				return false;
-		} else if (!estado.equals(other.estado))
+		} else if (!estadoEnum.equals(other.estadoEnum))
 			return false;
 		if (fechaCreacion == null) {
 			if (other.fechaCreacion != null)
