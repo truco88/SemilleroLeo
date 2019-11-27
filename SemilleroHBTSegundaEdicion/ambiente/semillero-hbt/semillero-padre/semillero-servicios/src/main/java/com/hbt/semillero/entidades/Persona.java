@@ -2,6 +2,14 @@ package com.hbt.semillero.entidades;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 /**
  * 
  * <b>Descripción:<b> Clase Persona
@@ -11,6 +19,9 @@ import java.io.Serializable;
  * @author soporte_it_manizales
  * @version
  */
+
+@Entity
+@Table(name = "TC_PERSONA")
 public class Persona implements Serializable {
 
 	/**
@@ -50,6 +61,11 @@ public class Persona implements Serializable {
 	 * 
 	 * @return El id asociado a la clase
 	 */
+
+	@Id
+	@SequenceGenerator(allocationSize = 1, name = "TC_PERSONA_SPID_GENERATOR", sequenceName = "SEQ_TC_PERSONA")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TC_PERSONA_SPID_GENERATOR")
+	@Column(name = "SPID")
 	public String getId() {
 		return id;
 	}
@@ -68,6 +84,8 @@ public class Persona implements Serializable {
 	 * 
 	 * @return El nombre asociado a la clase
 	 */
+
+	@Column(name = "SCNOMBRE")
 	public String getNombre() {
 		return nombre;
 	}
@@ -86,6 +104,7 @@ public class Persona implements Serializable {
 	 * 
 	 * @return El numeroIdentificacion asociado a la clase
 	 */
+	@Column(name = "SCNUMIDENTIFICACION")
 	public String getNumeroIdentificacion() {
 		return numeroIdentificacion;
 	}
