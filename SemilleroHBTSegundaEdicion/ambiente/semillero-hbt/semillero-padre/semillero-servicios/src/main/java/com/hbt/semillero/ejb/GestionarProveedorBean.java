@@ -4,7 +4,6 @@ import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import com.hbt.semillero.dto.ProveedorDTO;
 import com.hbt.semillero.entidades.Proveedor;
 

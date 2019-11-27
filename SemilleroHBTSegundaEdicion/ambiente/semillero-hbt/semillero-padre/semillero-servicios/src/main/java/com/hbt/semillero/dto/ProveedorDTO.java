@@ -3,7 +3,6 @@ package com.hbt.semillero.dto;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
 import com.hbt.semillero.entidades.EstadoEnum;
 import com.hbt.semillero.entidades.Persona;
 
