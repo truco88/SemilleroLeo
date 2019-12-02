@@ -30,7 +30,7 @@ public class Persona implements Serializable {
 	 * serializamos. mediante este id podemos identificar el objeto convertido en un
 	 * array de bytes.
 	 */
-
+	
 	private String id;
 	private String nombre;
 	private String numeroIdentificacion;

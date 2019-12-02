@@ -1,17 +1,23 @@
 package com.hbt.semillero.ejb;
 
 import com.hbt.semillero.dto.ProveedorDTO;
+import com.hbt.semillero.dto.ResultadoDTO;
 
 public interface IGestionarProveedorLocal {
 
 	/**
 	 * 
-	 * Metodo encargado de crear un comic y persistirlo
+	 * Metodo encargado de crear un persona y persistirlo
 	 * 
-	 * @author ccastano
+	 * @author Leo
 	 * 
 	 * @param comicNuevo informacion nueva a crear
+	 * @return 
 	 */
-	public void crearProveedor(ProveedorDTO proveedorNuevo);
+	public ResultadoDTO crearProveedor(ProveedorDTO proveedorDTO);
+	
+	
+	
+	
 
 }

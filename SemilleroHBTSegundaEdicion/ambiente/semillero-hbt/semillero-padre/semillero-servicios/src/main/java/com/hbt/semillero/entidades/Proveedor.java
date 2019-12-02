@@ -30,7 +30,7 @@ public class Proveedor implements Serializable {
 	 * serializamos. ;ediante este id podemos identificar el objeto convertido en un
 	 * array de bytes.
 	 */
-
+	
 	private String id;
 	private String direccion;
 	private LocalDate fechaCreacion;
@@ -44,7 +44,7 @@ public class Proveedor implements Serializable {
 	public Proveedor() {
 
 	}
-
+	
 	/**
 	 * Constructor de la clase.
 	 * 
