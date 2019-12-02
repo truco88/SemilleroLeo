@@ -3,12 +3,14 @@ package com.hbt.semillero.entidades;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -152,7 +154,8 @@ public class Proveedor implements Serializable {
 	 * 
 	 * @return El persona asociado a la clase
 	 */
-	@Column(name = "SPIDPERSONA")
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "SPIDPERSONA")
 	public Persona getPersona() {
 		return persona;
 	}
