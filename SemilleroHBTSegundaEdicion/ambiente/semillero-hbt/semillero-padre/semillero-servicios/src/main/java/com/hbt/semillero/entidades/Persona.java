@@ -1,7 +1,7 @@
 package com.hbt.semillero.entidades;
 
-import java.io.Serializable;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +22,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TC_PERSONA")
-public class Persona implements Serializable {
+public class Persona implements Serializable{
 
 	/**
 	 * Serializar es pasar un Objeto a un array de bytes y viceversa. Atributo que

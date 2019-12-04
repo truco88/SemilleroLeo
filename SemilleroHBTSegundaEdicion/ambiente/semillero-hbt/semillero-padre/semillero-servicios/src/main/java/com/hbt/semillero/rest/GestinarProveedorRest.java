@@ -9,31 +9,28 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-
-import com.hbt.semillero.dto.ComicDTO;
 import com.hbt.semillero.dto.ProveedorDTO;
 import com.hbt.semillero.dto.ResultadoDTO;
 import com.hbt.semillero.ejb.IGestionarProveedorLocal;
 
-
 /**
  * 
  * <b>Descripción:<b> Clase que determina el servicio rest de un Porveedor
- * <b>Caso de Uso:<b> 
+ * <b>Caso de Uso:<b>
+ * 
  * @author soporte_it_manizales
  * @version
  */
 
 @Path("/GestionarProveedor")
 public class GestinarProveedorRest {
-	
+
 	/**
 	 * Atriburo que permite gestionar una persona
 	 */
 	@EJB
 	private IGestionarProveedorLocal gestionarProveedorEJB;
-	
-	
+
 	@GET
 	@Path("/prueba")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -54,10 +51,7 @@ public class GestinarProveedorRest {
 	@Consumes(MediaType.APPLICATION_JSON)
 	public ResultadoDTO crearProveedor(ProveedorDTO proveedorDTO) {
 		return gestionarProveedorEJB.crearProveedor(proveedorDTO);
-		
+
 	}
-	
-	
-	
 
 }
