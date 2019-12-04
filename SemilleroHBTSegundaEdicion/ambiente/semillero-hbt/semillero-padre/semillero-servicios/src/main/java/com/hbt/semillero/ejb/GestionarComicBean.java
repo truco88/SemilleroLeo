@@ -98,10 +98,10 @@ public class GestionarComicBean implements IGestionarComicLocal {
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 	public List<ComicDTO> consultarComics() {
 
-		List<ComicDTO> resultadosComicDTO = new ArrayList<ComicDTO>();// conjunto de elementos que almacena datos con
-																		// cierto orden
-		List<Comic> resultados = em.createQuery("select c from Comic c").getResultList();// c hace referencia a toda la
-																							// entidad
+		// conjunto de elementos que almacena datos con cierto orden
+		List<ComicDTO> resultadosComicDTO = new ArrayList<ComicDTO>();
+		// c hace referencia a toda la entidad
+		List<Comic> resultados = em.createQuery("select c from Comic c").getResultList();
 		for (Comic comic : resultados) {
 			resultadosComicDTO.add(convertirComicToComicDTO(comic));
 		}
