@@ -11,7 +11,7 @@ import java.io.Serializable;
  */
 public class PersonaDTO implements Serializable {
 
-	private String id;
+	private Long id;
 	private String nombre;
 	private String numeroIdentificacion;
 
@@ -29,7 +29,7 @@ public class PersonaDTO implements Serializable {
 	 * @param nombre
 	 * @param numeroIdentificacion
 	 */
-	public PersonaDTO(String id, String nombre, String numeroIdentificacion) {
+	public PersonaDTO(Long id, String nombre, String numeroIdentificacion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -41,7 +41,7 @@ public class PersonaDTO implements Serializable {
 	 * 
 	 * @return El id asociado a la clase
 	 */
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -50,7 +50,7 @@ public class PersonaDTO implements Serializable {
 	 * 
 	 * @param id El nuevo id a modificar.
 	 */
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

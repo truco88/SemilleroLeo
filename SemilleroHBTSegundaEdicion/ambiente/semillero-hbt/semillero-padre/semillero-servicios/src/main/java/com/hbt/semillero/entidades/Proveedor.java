@@ -25,7 +25,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TC_PROVEEDOR")
 public class Proveedor implements Serializable {
-
+	
+	
 	/**
 	 * Serializar es pasar un Objeto a un array de bytes y viceversa. Atributo que
 	 * determina serialVersionUID es el id único que identifica una clase cuando lo
@@ -33,7 +34,7 @@ public class Proveedor implements Serializable {
 	 * array de bytes.
 	 */
 	
-	private String id;
+	private Long id;
 	private String direccion;
 	private LocalDate fechaCreacion;
 	private EstadoEnum estadoEnum;
@@ -57,7 +58,7 @@ public class Proveedor implements Serializable {
 	 * @param persona
 	 * @param montoCredito
 	 */
-	public Proveedor(String id, String direccion, LocalDate fechaCreacion, EstadoEnum estadoEnum, Persona persona,
+	public Proveedor(Long id, String direccion, LocalDate fechaCreacion, EstadoEnum estadoEnum, Persona persona,
 			BigDecimal montoCredito) {
 		super();
 		this.id = id;
@@ -78,7 +79,7 @@ public class Proveedor implements Serializable {
 	@SequenceGenerator(allocationSize = 1, name = "TC_PROVEEDOR_SPID_GENERATOR", sequenceName = "SEQ_TC_PROVEEDOR")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TC_PROVEEDOR_SPID_GENERATOR")
 	@Column(name = "SPID")
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -87,7 +88,7 @@ public class Proveedor implements Serializable {
 	 * 
 	 * @param id El nuevo id a modificar.
 	 */
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -174,7 +175,7 @@ public class Proveedor implements Serializable {
 	 * 
 	 * @return El montoCredito asociado a la clase
 	 */
-	@Column(name = "SPMONTO")
+	@Column(name = "SPMONTO_CREDITO")
 	public BigDecimal getMontoCredito() {
 		return montoCredito;
 	}

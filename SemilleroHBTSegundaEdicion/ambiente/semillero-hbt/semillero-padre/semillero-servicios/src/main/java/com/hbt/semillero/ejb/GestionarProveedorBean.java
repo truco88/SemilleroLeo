@@ -81,8 +81,7 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 
 	/**
 	 * 
-	 * Metodo encargado de modificar el nombre del proveedor 
-	 * <b>Caso de Uso</b>
+	 * Metodo encargado de modificar el nombre del proveedor <b>Caso de Uso</b>
 	 * 
 	 * @author soporte_it_manizales
 	 * 
@@ -91,9 +90,9 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 	 * @param montoCredito
 	 */
 	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
-	public void modificarProveedor(String idProveedor, String nombreProveedor, BigDecimal montoCredito,
+	public void modificarProveedor(Long idProveedor, String nombreProveedor, BigDecimal montoCredito,
 			ProveedorDTO proveedorNuevo, PersonaDTO personaNueva) {
-		
+
 		Proveedor proveedorModificar;
 		Persona personaModificar;
 
@@ -116,15 +115,14 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 
 	/**
 	 * 
-	 * Metodo encargado de modificar el estado de un Proveedor 
-	 * <b>Caso de Uso</b>
+	 * Metodo encargado de modificar el estado de un Proveedor <b>Caso de Uso</b>
 	 * 
 	 * @author soporte_it_manizales
 	 * 
 	 * @param idProveedor
 	 */
-	@TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
-	public void cambiarEstado(String idProveedor, EstadoEnum estado, ProveedorDTO nuevo) {
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
+	public void cambiarEstado(Long idProveedor, EstadoEnum estado) {
 
 		// validar que el id no este nullo y el estado
 		if (idProveedor != null && !idProveedor.equals("")) {
@@ -132,12 +130,13 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 			// consultar el proveedor usando entityManager
 			Proveedor proveedor = em.find(Proveedor.class, idProveedor);
 
-			// convertir estado String a estadoEnum
-			proveedor = convertirProveedorDTOToProveedor(nuevo);
-			proveedor.setEstado(estado);
+			// comparar el estado a estadoEnum proveedor
+			if (proveedor.getEstado().equals(estado)) {
 
-			// si el estado es diferente se hace la actualizacion
-			em.merge(proveedor);
+				proveedor.setEstado(estado);
+				em.merge(proveedor);
+
+			}
 
 		}
 
@@ -145,14 +144,13 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 
 	/**
 	 * 
-	 * Metodo encargado de Consultar el Proveedor 
-	 * <b>Caso de Uso</b>
+	 * Metodo encargado de Consultar el Proveedor <b>Caso de Uso</b>
 	 * 
 	 * @author soporte_it_manizales
 	 *
 	 */
 	@TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-	public ProveedorDTO consultarProveedor(String idProveedor) {
+	public ProveedorDTO consultarProveedor(Long idProveedor) {
 		Proveedor proveedor = em.find(Proveedor.class, idProveedor);
 		ProveedorDTO proveedorDTO = convertirProveedorToProveedorDTO(proveedor);
 		return proveedorDTO;
@@ -167,7 +165,7 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 	private Proveedor convertirProveedorDTOToProveedor(ProveedorDTO proveedorDTO) {
 
 		Proveedor proveedor = new Proveedor();
-		if (proveedorDTO.getId() != null) {
+		if (proveedorDTO != null && proveedorDTO.getId() != null) {
 			proveedor.setId(proveedorDTO.getId());
 		}
 
@@ -182,9 +180,9 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 	}
 
 	private ProveedorDTO convertirProveedorToProveedorDTO(Proveedor proveedor) {
-		ProveedorDTO proveedorDTO = new ProveedorDTO();
-		if (proveedor.getId() != null) {
-			proveedorDTO.setId(proveedor.getId().toString());
+		ProveedorDTO proveedorDTO = new ProveedorDTO();			
+		if (proveedor!= null && proveedor.getId() != null) {
+			proveedorDTO.setId(proveedor.getId());
 		}
 		proveedorDTO.setDireccion(proveedor.getDireccion());
 		proveedorDTO.setFechaCreacion(proveedor.getFechaCreacion());
@@ -205,12 +203,14 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 	 */
 	private Persona convertirPersonaDTOToPersona(PersonaDTO personaDTO) {
 		Persona persona = new Persona();
-		if (personaDTO.getId() != null) {
+		if (personaDTO !=null && personaDTO.getId() != null) {
 			persona.setId(personaDTO.getId());
 		}
 		persona.setNombre(personaDTO.getNombre());
 		persona.setNumeroIdentificacion(personaDTO.getNumeroIdentificacion());
 		return persona;
 	}
+
+
 
 }

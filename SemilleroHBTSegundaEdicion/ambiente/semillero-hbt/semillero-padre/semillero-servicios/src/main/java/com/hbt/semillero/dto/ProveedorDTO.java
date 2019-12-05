@@ -14,8 +14,11 @@ import com.hbt.semillero.entidades.Persona;
  * @version
  */
 public class ProveedorDTO implements Serializable {
+	
+	
+	private static final long serialVersionUID = 1L;
 
-	private String id;
+	private Long id;
 	private String direccion;
 	private LocalDate fechaCreacion;
 	private EstadoEnum estadoEnum;
@@ -39,7 +42,7 @@ public class ProveedorDTO implements Serializable {
 	 * @param persona
 	 * @param montoCredito
 	 */
-	public ProveedorDTO(String id, String direccion, LocalDate fechaCreacion, EstadoEnum estadoEnum, Persona persona,
+	public ProveedorDTO(Long id, String direccion, LocalDate fechaCreacion, EstadoEnum estadoEnum, Persona persona,
 			BigDecimal montoCredito) {
 		super();
 		this.id = id;
@@ -55,7 +58,7 @@ public class ProveedorDTO implements Serializable {
 	 * 
 	 * @return El id asociado a la clase
 	 */
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -64,7 +67,7 @@ public class ProveedorDTO implements Serializable {
 	 * 
 	 * @param id El nuevo id a modificar.
 	 */
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

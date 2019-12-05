@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" ignored="6" total="7" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="140" started-at="2019-11-19T14:43:05 COT" finished-at="2019-11-19T14:43:05 COT">
+  <suite name="Default suite" duration-ms="339" started-at="2019-12-05T14:24:35 COT" finished-at="2019-12-05T14:24:35 COT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="140" started-at="2019-11-19T14:43:05 COT" finished-at="2019-11-19T14:43:05 COT">
+    <test name="Default test" duration-ms="339" started-at="2019-12-05T14:24:35 COT" finished-at="2019-12-05T14:24:35 COT">
       <class name="com.hbt.semillero.servicios.EjerciciosTest">
-        <test-method status="FAIL" signature="ejercicio4()[pri:0, instance:com.hbt.semillero.servicios.EjerciciosTest@57536d79]" name="ejercicio4" duration-ms="60" started-at="2019-11-19T14:43:05 COT" finished-at="2019-11-19T14:43:05 COT">
+        <test-method status="FAIL" signature="ejercicio4()[pri:0, instance:com.hbt.semillero.servicios.EjerciciosTest@24db6ce]" name="ejercicio4" duration-ms="136" started-at="2019-12-05T14:24:35 COT" finished-at="2019-12-05T14:24:35 COT">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[did not expect to find [true] but found [false]]]>

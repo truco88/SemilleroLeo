@@ -31,7 +31,7 @@ public class Persona implements Serializable{
 	 * array de bytes.
 	 */
 	
-	private String id;
+	private Long id;
 	private String nombre;
 	private String numeroIdentificacion;
 
@@ -49,7 +49,7 @@ public class Persona implements Serializable{
 	 * @param nombre
 	 * @param numeroIdentificacion
 	 */
-	public Persona(String id, String nombre, String numeroIdentificacion) {
+	public Persona(Long id, String nombre, String numeroIdentificacion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -66,7 +66,7 @@ public class Persona implements Serializable{
 	@SequenceGenerator(allocationSize = 1, name = "TC_PERSONA_SPID_GENERATOR", sequenceName = "SEQ_TC_PERSONA")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TC_PERSONA_SPID_GENERATOR")
 	@Column(name = "SPID")
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
@@ -75,7 +75,7 @@ public class Persona implements Serializable{
 	 * 
 	 * @param id El nuevo id a modificar.
 	 */
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
