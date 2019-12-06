@@ -1,6 +1,5 @@
 package com.hbt.semillero.rest;
 
-import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -10,6 +9,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+
+import com.hbt.semillero.dto.PersonaDTO;
 import com.hbt.semillero.dto.ProveedorDTO;
 import com.hbt.semillero.dto.ResultadoDTO;
 import com.hbt.semillero.ejb.IGestionarProveedorLocal;
@@ -68,11 +69,14 @@ public class GestinarProveedorRest {
 	@GET
 	@Path("/consultarProveedor")
 	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
 	public ProveedorDTO consultarProveedor(@QueryParam("idProveedor") Long idProveedor) {
-		 return gestionarProveedorEJB.consultarProveedor(idProveedor);
-			
-		
+		if (idProveedor != null) {
+			ProveedorDTO proveedorDTO = gestionarProveedorEJB.consultarProveedor(idProveedor);
+			return proveedorDTO;
+		}
+		return null;		
 	}
+	
+	
 
 }

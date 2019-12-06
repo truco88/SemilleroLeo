@@ -23,14 +23,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TC_PERSONA")
 public class Persona implements Serializable{
-
+	
+	
 	/**
 	 * Serializar es pasar un Objeto a un array de bytes y viceversa. Atributo que
 	 * determina serialVersionUID es el id único que identifica una clase cuando lo
 	 * serializamos. mediante este id podemos identificar el objeto convertido en un
 	 * array de bytes.
 	 */
-	
+	private static final long serialVersionUID = 1L;
 	private Long id;
 	private String nombre;
 	private String numeroIdentificacion;

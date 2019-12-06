@@ -11,8 +11,8 @@ import com.hbt.semillero.entidades.Persona;
 
 /**
  * 
- * <b>Descripción:<b> Clase que determina la gestion de Persona <b>Caso de
- * Uso:<b>
+ * <b>Descripción:<b> Clase que determina la gestion de Persona 
+ * <b>Caso de Uso:<b>
  * 
  * @author soporte_it_manizales
  * @version
