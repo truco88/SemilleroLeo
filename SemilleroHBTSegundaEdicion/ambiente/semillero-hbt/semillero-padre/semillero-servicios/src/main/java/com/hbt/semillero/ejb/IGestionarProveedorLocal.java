@@ -7,11 +7,11 @@ import com.hbt.semillero.dto.ProveedorDTO;
 import com.hbt.semillero.dto.ResultadoDTO;
 import com.hbt.semillero.entidades.EstadoEnum;
 
-
 /**
- * Interfaz coleccion de metodos abstractos, se especifica que se debe hacer pero no su implementacion
- * <b>Descripción:<b> Clase que determina
- * <b>Caso de Uso:<b> 
+ * Interfaz coleccion de metodos abstractos, se especifica que se debe hacer
+ * pero no su implementacion <b>Descripción:<b> Clase que determina <b>Caso de
+ * Uso:<b>
+ * 
  * @author soporte_it_manizales
  * @version
  */

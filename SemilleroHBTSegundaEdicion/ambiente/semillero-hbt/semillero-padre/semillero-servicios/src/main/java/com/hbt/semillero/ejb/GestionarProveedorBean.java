@@ -2,24 +2,21 @@ package com.hbt.semillero.ejb;
 
 import java.math.BigDecimal;
 import java.util.List;
-
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
-import com.hbt.semillero.dto.ComicDTO;
 import com.hbt.semillero.dto.PersonaDTO;
 import com.hbt.semillero.dto.ProveedorDTO;
 import com.hbt.semillero.dto.ResultadoDTO;
-import com.hbt.semillero.entidades.Comic;
 import com.hbt.semillero.entidades.EstadoEnum;
 import com.hbt.semillero.entidades.Persona;
 import com.hbt.semillero.entidades.Proveedor;
 
 /**
- * <b>Descripción:<b> Clase que determina la gestion del proveedor <b>Caso de
+ * <b>Descripción:<b> Clase que determina la gestion del proveedor 
+ * <b>Caso de
  * Uso:<b>
  * 
  * @author Leo
@@ -180,8 +177,8 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 	}
 
 	private ProveedorDTO convertirProveedorToProveedorDTO(Proveedor proveedor) {
-		ProveedorDTO proveedorDTO = new ProveedorDTO();			
-		if (proveedor!= null && proveedor.getId() != null) {
+		ProveedorDTO proveedorDTO = new ProveedorDTO();
+		if (proveedor != null && proveedor.getId() != null) {
 			proveedorDTO.setId(proveedor.getId());
 		}
 		proveedorDTO.setDireccion(proveedor.getDireccion());
@@ -203,14 +200,12 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 	 */
 	private Persona convertirPersonaDTOToPersona(PersonaDTO personaDTO) {
 		Persona persona = new Persona();
-		if (personaDTO !=null && personaDTO.getId() != null) {
+		if (personaDTO != null && personaDTO.getId() != null) {
 			persona.setId(personaDTO.getId());
 		}
 		persona.setNombre(personaDTO.getNombre());
 		persona.setNumeroIdentificacion(personaDTO.getNumeroIdentificacion());
 		return persona;
 	}
-
-
 
 }
