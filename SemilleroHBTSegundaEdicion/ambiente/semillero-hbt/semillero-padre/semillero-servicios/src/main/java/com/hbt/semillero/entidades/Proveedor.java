@@ -27,8 +27,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TC_PROVEEDOR")
 public class Proveedor implements Serializable {
-	
-	
+
 	/**
 	 * Serializar es pasar un Objeto a un array de bytes y viceversa. Atributo que
 	 * determina serialVersionUID es el id único que identifica una clase cuando lo
@@ -36,7 +35,7 @@ public class Proveedor implements Serializable {
 	 * array de bytes.
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private Long id;
 	private String direccion;
 	private LocalDate fechaCreacion;
@@ -50,7 +49,7 @@ public class Proveedor implements Serializable {
 	public Proveedor() {
 
 	}
-	
+
 	/**
 	 * Constructor de la clase.
 	 * 

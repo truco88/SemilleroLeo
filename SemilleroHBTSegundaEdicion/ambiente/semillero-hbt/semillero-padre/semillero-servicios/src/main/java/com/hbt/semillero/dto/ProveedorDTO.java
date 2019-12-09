@@ -14,8 +14,7 @@ import com.hbt.semillero.dto.PersonaDTO;
  * @version
  */
 public class ProveedorDTO implements Serializable {
-	
-	
+
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
@@ -42,8 +41,8 @@ public class ProveedorDTO implements Serializable {
 	 * @param persona
 	 * @param montoCredito
 	 */
-	public ProveedorDTO(Long id, String direccion, LocalDate fechaCreacion, EstadoEnum estadoEnum, PersonaDTO personaDTO,
-			BigDecimal montoCredito) {
+	public ProveedorDTO(Long id, String direccion, LocalDate fechaCreacion, EstadoEnum estadoEnum,
+			PersonaDTO personaDTO, BigDecimal montoCredito) {
 		super();
 		this.id = id;
 		this.direccion = direccion;
@@ -109,6 +108,7 @@ public class ProveedorDTO implements Serializable {
 
 	/**
 	 * Metodo encargado de retornar el valor del atributo estadoEnum
+	 * 
 	 * @return El estadoEnum asociado a la clase
 	 */
 	public EstadoEnum getEstadoEnum() {
@@ -117,6 +117,7 @@ public class ProveedorDTO implements Serializable {
 
 	/**
 	 * Metodo encargado de modificar el valor del atributo estadoEnum
+	 * 
 	 * @param estadoEnum El nuevo estadoEnum a modificar.
 	 */
 	public void setEstadoEnum(EstadoEnum estadoEnum) {
@@ -125,6 +126,7 @@ public class ProveedorDTO implements Serializable {
 
 	/**
 	 * Metodo encargado de retornar el valor del atributo personaDTO
+	 * 
 	 * @return El personaDTO asociado a la clase
 	 */
 	public PersonaDTO getPersonaDTO() {
@@ -133,12 +135,12 @@ public class ProveedorDTO implements Serializable {
 
 	/**
 	 * Metodo encargado de modificar el valor del atributo personaDTO
+	 * 
 	 * @param personaDTO El nuevo personaDTO a modificar.
 	 */
 	public void setPersonaDTO(PersonaDTO persona) {
 		this.personaDTO = persona;
 	}
-
 
 	/**
 	 * Metodo encargado de retornar el valor del atributo montoCredito
@@ -157,7 +159,7 @@ public class ProveedorDTO implements Serializable {
 	public void setMontoCredito(BigDecimal montoCredito) {
 		this.montoCredito = montoCredito;
 	}
-	
+
 	public static ProveedorDTO valueOf(String arg) {
 		return JsonUtils.valueOf(arg, ProveedorDTO.class);
 	}
@@ -166,7 +168,7 @@ public class ProveedorDTO implements Serializable {
 	public String toString() {
 		return JsonUtils.toStringJson(this);
 	}
-	
+
 	/**
 	 * @see java.lang.Object#hashCode() Este método viene a complementar al método
 	 *      equals y sirve para comparar objetos de una forma más rápida en

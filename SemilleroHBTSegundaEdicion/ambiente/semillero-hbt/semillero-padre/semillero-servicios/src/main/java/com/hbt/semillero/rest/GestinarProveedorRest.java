@@ -1,6 +1,5 @@
 package com.hbt.semillero.rest;
 
-
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -56,12 +55,11 @@ public class GestinarProveedorRest {
 		return gestionarProveedorEJB.crearProveedor(proveedorDTO);
 
 	}
-	
-	
+
 	/**
 	 * 
-	 * Metodo encargado de consultar proveedor 
-	 * <b>Caso de Uso</b>
+	 * Metodo encargado de consultar proveedor <b>Caso de Uso</b>
+	 * 
 	 * @author soporte_it_manizales
 	 * 
 	 * @param idProveedor
@@ -75,11 +73,7 @@ public class GestinarProveedorRest {
 			ProveedorDTO proveedorDTO = gestionarProveedorEJB.consultarProveedor(idProveedor);
 			return proveedorDTO;
 		}
-		return null;		
+		return null;
 	}
-	
-	
-	
-	
 
 }

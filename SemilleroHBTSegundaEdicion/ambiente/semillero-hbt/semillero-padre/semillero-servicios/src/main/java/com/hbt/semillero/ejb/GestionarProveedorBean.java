@@ -140,8 +140,7 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 
 	/**
 	 * 
-	 * Metodo encargado de Consultar el Proveedor 
-	 * <b>Caso de Uso</b>
+	 * Metodo encargado de Consultar el Proveedor <b>Caso de Uso</b>
 	 * 
 	 * @author soporte_it_manizales
 	 *
@@ -164,9 +163,9 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 		if (proveedorDTO != null && proveedorDTO.getId() != null) {
 			proveedor.setId(proveedorDTO.getId());
 		}
-		
+
 		Persona persona = convertirPersonaDTOToPersona(proveedorDTO.getPersonaDTO());
-		
+
 		proveedor.setDireccion(proveedorDTO.getDireccion());
 		proveedor.setFechaCreacion(proveedorDTO.getFechaCreacion());
 		proveedor.setEstado(proveedorDTO.getEstadoEnum());
@@ -174,7 +173,7 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 		proveedor.setMontoCredito(proveedorDTO.getMontoCredito());
 
 		return proveedor;
-		
+
 	}
 
 	private ProveedorDTO convertirProveedorToProveedorDTO(Proveedor proveedor) {
@@ -182,10 +181,9 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 		if (proveedor != null && proveedor.getId() != null) {
 			proveedorDTO.setId(proveedor.getId());
 		}
-		
+
 		PersonaDTO personaDTO = convertirPersonaToPersonaDTO(proveedor.getPersona());
-		
-		
+
 		proveedorDTO.setDireccion(proveedor.getDireccion());
 		proveedorDTO.setFechaCreacion(proveedor.getFechaCreacion());
 		proveedorDTO.setEstadoEnum(proveedor.getEstado());
@@ -212,7 +210,7 @@ public class GestionarProveedorBean implements IGestionarProveedorLocal {
 		persona.setNumeroIdentificacion(personaDTO.getNumeroIdentificacion());
 		return persona;
 	}
-	
+
 	/**
 	 * 
 	 * Metodo encargado de transformar un persona a una personaDTO
