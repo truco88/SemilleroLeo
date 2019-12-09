@@ -10,7 +10,9 @@ import java.io.Serializable;
  * @version
  */
 public class PersonaDTO implements Serializable {
-
+	
+	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private String nombre;
 	private String numeroIdentificacion;

@@ -5,12 +5,14 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -34,6 +36,7 @@ public class Proveedor implements Serializable {
 	 * array de bytes.
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	private Long id;
 	private String direccion;
 	private LocalDate fechaCreacion;
@@ -137,6 +140,7 @@ public class Proveedor implements Serializable {
 	 * @return El estado asociado a la clase
 	 */
 	@Column(name = "SPESTADO")
+	@Enumerated(value = EnumType.STRING)
 	public EstadoEnum getEstado() {
 		return estadoEnum;
 	}
@@ -155,7 +159,7 @@ public class Proveedor implements Serializable {
 	 * 
 	 * @return El persona asociado a la clase
 	 */
-	@ManyToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "SPIDPERSONA")
 	public Persona getPersona() {
 		return persona;

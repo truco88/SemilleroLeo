@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import com.hbt.semillero.entidades.EstadoEnum;
-import com.hbt.semillero.entidades.Persona;
+import com.hbt.semillero.dto.PersonaDTO;
 
 /**
  * 
@@ -22,7 +22,7 @@ public class ProveedorDTO implements Serializable {
 	private String direccion;
 	private LocalDate fechaCreacion;
 	private EstadoEnum estadoEnum;
-	private Persona persona;
+	private PersonaDTO personaDTO;
 	private BigDecimal montoCredito;
 
 	/**
@@ -42,14 +42,14 @@ public class ProveedorDTO implements Serializable {
 	 * @param persona
 	 * @param montoCredito
 	 */
-	public ProveedorDTO(Long id, String direccion, LocalDate fechaCreacion, EstadoEnum estadoEnum, Persona persona,
+	public ProveedorDTO(Long id, String direccion, LocalDate fechaCreacion, EstadoEnum estadoEnum, PersonaDTO personaDTO,
 			BigDecimal montoCredito) {
 		super();
 		this.id = id;
 		this.direccion = direccion;
 		this.fechaCreacion = fechaCreacion;
 		this.estadoEnum = estadoEnum;
-		this.persona = persona;
+		this.personaDTO = personaDTO;
 		this.montoCredito = montoCredito;
 	}
 
@@ -108,40 +108,37 @@ public class ProveedorDTO implements Serializable {
 	}
 
 	/**
-	 * Metodo encargado de retornar el valor del atributo estado
-	 * 
-	 * @return El estado asociado a la clase
+	 * Metodo encargado de retornar el valor del atributo estadoEnum
+	 * @return El estadoEnum asociado a la clase
 	 */
-	public EstadoEnum getEstado() {
+	public EstadoEnum getEstadoEnum() {
 		return estadoEnum;
 	}
 
 	/**
-	 * Metodo encargado de modificar el valor del atributo estado
-	 * 
-	 * @param estado El nuevo estado a modificar.
+	 * Metodo encargado de modificar el valor del atributo estadoEnum
+	 * @param estadoEnum El nuevo estadoEnum a modificar.
 	 */
-	public void setEstado(EstadoEnum estadoEnum) {
+	public void setEstadoEnum(EstadoEnum estadoEnum) {
 		this.estadoEnum = estadoEnum;
 	}
 
 	/**
-	 * Metodo encargado de retornar el valor del atributo persona
-	 * 
-	 * @return El persona asociado a la clase
+	 * Metodo encargado de retornar el valor del atributo personaDTO
+	 * @return El personaDTO asociado a la clase
 	 */
-	public Persona getPersona() {
-		return persona;
+	public PersonaDTO getPersonaDTO() {
+		return personaDTO;
 	}
 
 	/**
-	 * Metodo encargado de modificar el valor del atributo persona
-	 * 
-	 * @param persona El nuevo persona a modificar.
+	 * Metodo encargado de modificar el valor del atributo personaDTO
+	 * @param personaDTO El nuevo personaDTO a modificar.
 	 */
-	public void setPersona(Persona persona) {
-		this.persona = persona;
+	public void setPersonaDTO(PersonaDTO persona) {
+		this.personaDTO = persona;
 	}
+
 
 	/**
 	 * Metodo encargado de retornar el valor del atributo montoCredito
@@ -160,7 +157,16 @@ public class ProveedorDTO implements Serializable {
 	public void setMontoCredito(BigDecimal montoCredito) {
 		this.montoCredito = montoCredito;
 	}
+	
+	public static ProveedorDTO valueOf(String arg) {
+		return JsonUtils.valueOf(arg, ProveedorDTO.class);
+	}
 
+	@Override
+	public String toString() {
+		return JsonUtils.toStringJson(this);
+	}
+	
 	/**
 	 * @see java.lang.Object#hashCode() Este método viene a complementar al método
 	 *      equals y sirve para comparar objetos de una forma más rápida en
@@ -177,7 +183,7 @@ public class ProveedorDTO implements Serializable {
 		result = prime * result + ((fechaCreacion == null) ? 0 : fechaCreacion.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((montoCredito == null) ? 0 : montoCredito.hashCode());
-		result = prime * result + ((persona == null) ? 0 : persona.hashCode());
+		result = prime * result + ((personaDTO == null) ? 0 : personaDTO.hashCode());
 		return result;
 	}
 
@@ -218,10 +224,10 @@ public class ProveedorDTO implements Serializable {
 				return false;
 		} else if (!montoCredito.equals(other.montoCredito))
 			return false;
-		if (persona == null) {
-			if (other.persona != null)
+		if (personaDTO == null) {
+			if (other.personaDTO != null)
 				return false;
-		} else if (!persona.equals(other.persona))
+		} else if (!personaDTO.equals(other.personaDTO))
 			return false;
 		return true;
 	}
