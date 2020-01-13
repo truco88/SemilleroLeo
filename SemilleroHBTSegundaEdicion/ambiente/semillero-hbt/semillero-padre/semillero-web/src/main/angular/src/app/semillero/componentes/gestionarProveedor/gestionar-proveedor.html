@@ -1,0 +1,64 @@
+<div class="container">
+    <form [formGroup]="gestionarProveedorForm">
+        <h1>Gestionar Proveedor</h1>
+        <hr>
+
+        <div class="row">
+            <div class="col-6">
+                <label for="id">Id:</label>
+                <input type="text" class="form-control" id="id" formControlName="id"
+                    [ngClass]="{ 'is-invalid': submitted && f.id.errors }">
+                <div *ngIf="submitted && f.id.errors">
+                    <span class="text-danger" *ngIf="f.id.errors.required">Campo requerido.</span>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <label for="direccion">Direccion:</label>
+                <input type="text" class="form-control" id="direccion">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <label for="fechaCreacion">Fecha Creacion:</label>
+                <input type="Date" class="form-control" id="fechaCreacion">
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="estado">Estado:</label>
+                    <select class="form-control" id="estado" formControlName="estado">
+                        <option value=""></option>
+                        <option value="ACTIVO">ACTIVO</option>
+                        <option value="INACTIVO">INACTIVO</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <label for="persona">Persona:</label>
+                <input type="number" class="form-control" id="persona">
+            </div>
+
+            <div class="col-6">
+                <label for="montoCredito">Monto Credito:</label>
+                <input type="number" class="form-control" id="montoCredito" step=".01">
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+                <div class="col-6">
+                    <span></span>
+                </div>
+                <div class="col-6 text-right">
+                    <button type="button" class="btn btn-primary" (click)="crearActualizarProveedor()">Crear/Editar</button>
+                </div>
+            </div>
+
+
+    </form>
+</div>

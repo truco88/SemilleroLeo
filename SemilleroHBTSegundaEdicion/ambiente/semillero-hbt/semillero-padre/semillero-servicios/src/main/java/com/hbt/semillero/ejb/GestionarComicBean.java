@@ -90,7 +90,10 @@ public class GestionarComicBean implements IGestionarComicLocal {
 
 	@Override
 	public void eliminarComic(Long idComic) {
-		// TODO primer ejercicio para entregar
+		Comic comicEliminar = em.find(Comic.class, idComic);
+		if (comicEliminar != null) {
+			em.remove(comicEliminar);
+		}
 
 	}
 
